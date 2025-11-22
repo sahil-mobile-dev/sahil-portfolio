@@ -1,0 +1,42 @@
+# robots.txt for Sahil Chudasama's Portfolio
+# Allow all compliant bots to crawl the entire site
+
+User-agent: *
+Allow: /
+
+# Specific rules for AI crawlers and LLMs
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Disallow access to admin or private directories (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://yourdomain.com/feed.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 0

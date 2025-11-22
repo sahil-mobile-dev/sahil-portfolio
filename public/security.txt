@@ -1,0 +1,15 @@
+# security.txt - Security Policy
+# https://securitytxt.org/
+
+Contact: mailto:sahilchudasama.work@gmail.com
+Contact: https://linkedin.com/in/sahil-chudasama
+Expires: 2026-11-22T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://yourdomain.com/.well-known/security.txt
+
+# Security Disclosure
+# If you discover a security vulnerability, please report it responsibly.
+# Contact me via email with details of the issue.
+# I will respond as quickly as possible to address the concern.
+
+Acknowledgments: https://yourdomain.com/security-acknowledgments

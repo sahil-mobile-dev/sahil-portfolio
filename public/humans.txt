@@ -1,0 +1,36 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Developer & Designer: Sahil Chudasama
+    Contact: sahilchudasama.work [at] gmail.com
+    LinkedIn: https://linkedin.com/in/sahil-chudasama
+    Location: India
+
+# THANKS
+
+    To the open-source community
+    Flutter & Dart teams
+    Everyone who supported my learning journey
+
+# TECHNOLOGY COLOPHON
+
+    Frontend: Next.js, React, JavaScript
+    Mobile: Flutter, Dart
+    Styling: CSS3, Modern CSS
+    Backend: Firebase, Node.js
+    APIs: REST APIs
+    Design: Figma
+    Version Control: Git, GitHub
+    Deployment: Vercel / Firebase Hosting
+    AI/ML: AI Integrations
+    Standards: HTML5, CSS3, ES6+, Schema.org, OpenGraph
+    
+# SITE
+
+    Last update: 2025/11/22
+    Language: English
+    Doctype: HTML5
+    IDE: VS Code
+    Standards: W3C, SEO optimized, AI-discoverable

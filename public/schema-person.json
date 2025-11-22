@@ -1,0 +1,82 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://yourdomain.com/#person",
+    "name": "Sahil Chudasama",
+    "alternateName": "Sahil",
+    "url": "https://yourdomain.com",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://yourdomain.com/images/profile.jpg",
+        "width": 800,
+        "height": 800
+    },
+    "sameAs": [
+        "https://linkedin.com/in/sahil-chudasama",
+        "https://github.com/your-github-username",
+        "https://yourdomain.com"
+    ],
+    "jobTitle": "Flutter Developer & Mobile App Engineer",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance / Independent Developer"
+    },
+    "description": "Passionate Flutter developer with strong experience in building scalable and visually stunning apps. I love building modern apps, solving problems, working with new technologies, and contributing to the community.",
+    "email": "sahilchudasama.work@gmail.com",
+    "knowsAbout": [
+        "Flutter Development",
+        "Dart Programming",
+        "Mobile App Development",
+        "Firebase",
+        "REST APIs",
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "UI/UX Design",
+        "Figma",
+        "AI Integrations",
+        "Cross-Platform Development"
+    ],
+    "knowsLanguage": [
+        {
+            "@type": "Language",
+            "name": "English",
+            "alternateName": "en"
+        }
+    ],
+    "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Mobile Application Developer",
+        "occupationalCategory": "15-1252.00",
+        "skills": "Flutter, Dart, Firebase, REST APIs, Python, JavaScript, Node.js, Figma, AI Integrations",
+        "educationRequirements": "Bachelor's degree in Computer Science or related field"
+    },
+    "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "University Name"
+    },
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "sahilchudasama.work@gmail.com",
+        "contactType": "Professional Inquiries",
+        "availableLanguage": "English"
+    },
+    "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+            "@type": "Service",
+            "name": "Flutter App Development Services",
+            "description": "Professional mobile app development using Flutter, including design, development, and deployment"
+        }
+    },
+    "subjectOf": {
+        "@type": "WebPage",
+        "url": "https://yourdomain.com",
+        "name": "Sahil Chudasama - Portfolio",
+        "description": "Professional portfolio showcasing Flutter development projects and skills"
+    }
+}

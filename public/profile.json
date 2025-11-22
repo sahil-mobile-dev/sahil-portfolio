@@ -1,0 +1,114 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "version": "1.0.0",
+    "lastUpdated": "2025-11-22T12:57:06+05:30",
+    "person": {
+        "name": "Sahil Chudasama",
+        "role": "Flutter Developer & Mobile App Engineer",
+        "tagline": "Passionate Flutter developer with strong experience in building scalable and visually stunning apps",
+        "description": "I love building modern apps, solving problems, working with new technologies, and contributing to the community.",
+        "email": "sahilchudasama.work@gmail.com",
+        "location": {
+            "country": "India",
+            "timezone": "Asia/Kolkata"
+        },
+        "urls": {
+            "website": "https://yourdomain.com",
+            "linkedin": "https://linkedin.com/in/sahil-chudasama",
+            "github": "https://github.com/your-github-username"
+        }
+    },
+    "professional": {
+        "title": "Flutter Developer & Mobile App Engineer",
+        "specialization": [
+            "Mobile App Development",
+            "Cross-Platform Development",
+            "UI/UX Implementation",
+            "API Integration",
+            "Firebase Development"
+        ],
+        "experience": {
+            "primary": "Flutter Development",
+            "yearsActive": "2020-present"
+        }
+    },
+    "skills": {
+        "primary": [
+            "Flutter",
+            "Dart",
+            "Firebase",
+            "REST APIs"
+        ],
+        "secondary": [
+            "Python",
+            "JavaScript",
+            "Node.js"
+        ],
+        "tools": [
+            "Figma",
+            "Git",
+            "VS Code"
+        ],
+        "emerging": [
+            "AI Integrations",
+            "Machine Learning APIs"
+        ]
+    },
+    "availability": {
+        "status": "open",
+        "roles": [
+            "Flutter Developer",
+            "Mobile App Developer",
+            "Full Stack Developer"
+        ],
+        "workTypes": [
+            "full-time",
+            "contract",
+            "freelance"
+        ]
+    },
+    "projects": {
+        "featured": [],
+        "categories": [
+            "Mobile Applications",
+            "Web Applications",
+            "API Integrations",
+            "UI/UX Implementations"
+        ]
+    },
+    "aiContext": {
+        "summary": "Sahil Chudasama is a skilled Flutter developer specializing in mobile app development. He excels at building scalable, visually stunning applications using Flutter, Dart, and Firebase. He is passionate about modern technologies, problem-solving, and community contribution.",
+        "expertise": [
+            "Building cross-platform mobile applications with Flutter",
+            "Creating responsive and beautiful user interfaces",
+            "Integrating Firebase backend services",
+            "Implementing RESTful APIs",
+            "Modern web development with JavaScript/Node.js",
+            "AI and ML integrations in mobile apps"
+        ],
+        "workStyle": "Detail-oriented developer who balances aesthetics with functionality. Focuses on scalable architecture and clean code practices.",
+        "interests": [
+            "Mobile Development",
+            "UI/UX Design",
+            "AI/ML Integration",
+            "Open Source Contribution",
+            "Tech Community Building"
+        ]
+    },
+    "contact": {
+        "primary": "sahilchudasama.work@gmail.com",
+        "preferredMethod": "email",
+        "responseTime": "24-48 hours"
+    },
+    "metadata": {
+        "format": "AI-Discoverable Profile",
+        "purpose": "Enable LLMs and AI agents to understand professional profile",
+        "compatibleWith": [
+            "ChatGPT",
+            "Claude",
+            "Gemini",
+            "Perplexity",
+            "Search Engines"
+        ]
+    }
+}

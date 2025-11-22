@@ -5,24 +5,24 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Sahil Chudasama - Flutter Developer Blog</title>
-    <link>https://yourdomain.com</link>
-    <atom:link href="https://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://sahil48-portfolio.web.app</link>
+    <atom:link href="https://sahil48-portfolio.web.app/feed.xml" rel="self" type="application/rss+xml" />
     <description>Updates, insights, and tutorials from Sahil Chudasama on Flutter development, mobile app engineering, and modern web technologies.</description>
     <language>en-US</language>
     <copyright>Copyright 2025 Sahil Chudasama</copyright>
-    <managingEditor>sahilchudasama.work@gmail.com (Sahil Chudasama)</managingEditor>
-    <webMaster>sahilchudasama.work@gmail.com (Sahil Chudasama)</webMaster>
-    <lastBuildDate>Fri, 22 Nov 2025 12:57:06 +0530</lastBuildDate>
-    <pubDate>Fri, 22 Nov 2025 12:57:06 +0530</pubDate>
+    <managingEditor>sahil.mobiledev@gmail.com (Sahil Chudasama)</managingEditor>
+    <webMaster>sahil.mobiledev@gmail.com (Sahil Chudasama)</webMaster>
+    <lastBuildDate>Fri, 22 Nov 2025 13:08:40 +0530</lastBuildDate>
+    <pubDate>Fri, 22 Nov 2025 13:08:40 +0530</pubDate>
     <category>Technology</category>
     <category>Mobile Development</category>
     <category>Flutter</category>
     <category>Web Development</category>
     <ttl>60</ttl>
     <image>
-      <url>https://yourdomain.com/images/logo.png</url>
+      <url>https://sahil48-portfolio.web.app/images/logo.png</url>
       <title>Sahil Chudasama - Flutter Developer</title>
-      <link>https://yourdomain.com</link>
+      <link>https://sahil48-portfolio.web.app</link>
       <width>144</width>
       <height>144</height>
     </image>
@@ -30,10 +30,10 @@
     <!-- Sample item - replace with actual blog posts -->
     <item>
       <title>Welcome to My Portfolio</title>
-      <link>https://yourdomain.com/blog/welcome</link>
-      <guid isPermaLink="true">https://yourdomain.com/blog/welcome</guid>
+      <link>https://sahil48-portfolio.web.app/blog/welcome</link>
+      <guid isPermaLink="true">https://sahil48-portfolio.web.app/blog/welcome</guid>
       <description>Welcome to my portfolio and blog. Stay tuned for insights on Flutter development and mobile engineering.</description>
-      <pubDate>Fri, 22 Nov 2025 12:57:06 +0530</pubDate>
+      <pubDate>Fri, 22 Nov 2025 13:08:40 +0530</pubDate>
       <dc:creator>Sahil Chudasama</dc:creator>
       <category>Announcement</category>
     </item>

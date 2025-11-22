@@ -4,9 +4,23 @@
 # TEAM
 
     Developer & Designer: Sahil Chudasama
-    Contact: sahilchudasama.work [at] gmail.com
-    LinkedIn: https://linkedin.com/in/sahil-chudasama
+    Title: Flutter Developer | Cross-Platform App Engineer | AI-Integrated App Builder
+    Contact: sahil.mobiledev [at] gmail.com
+    Phone: +91 70168 78751
+    Portfolio: https://sahil48-portfolio.web.app
+    LinkedIn: https://in.linkedin.com/in/sahil-chudasama
+    GitHub: https://github.com/sahil-chudasama
     Location: India
+    
+# EDUCATION
+
+    B.Tech - Computer Engineering
+    Silver Oak College of Engineering & Technology (2020-2023)
+    CGPA: 8.41
+    
+    Diploma - Information Technology
+    Government Polytechnic Ahmedabad (2017-2020)
+    CGPA: 8.86
 
 # THANKS
 

@@ -1,41 +1,48 @@
 {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://yourdomain.com/#person",
+    "@id": "https://sahil48-portfolio.web.app/#person",
     "name": "Sahil Chudasama",
     "alternateName": "Sahil",
-    "url": "https://yourdomain.com",
+    "url": "https://sahil48-portfolio.web.app",
     "image": {
         "@type": "ImageObject",
-        "url": "https://yourdomain.com/images/profile.jpg",
+        "url": "https://sahil48-portfolio.web.app/images/profile.jpg",
         "width": 800,
         "height": 800
     },
     "sameAs": [
-        "https://linkedin.com/in/sahil-chudasama",
-        "https://github.com/your-github-username",
-        "https://yourdomain.com"
+        "https://in.linkedin.com/in/sahil-chudasama",
+        "https://github.com/sahil-chudasama",
+        "https://sahil48-portfolio.web.app"
     ],
-    "jobTitle": "Flutter Developer & Mobile App Engineer",
+    "jobTitle": "Flutter Developer | Cross-Platform App Engineer | AI-Integrated App Builder",
     "worksFor": {
         "@type": "Organization",
-        "name": "Freelance / Independent Developer"
+        "name": "Qurious Click"
     },
-    "description": "Passionate Flutter developer with strong experience in building scalable and visually stunning apps. I love building modern apps, solving problems, working with new technologies, and contributing to the community.",
-    "email": "sahilchudasama.work@gmail.com",
+    "description": "Flutter Developer with strong experience in building cross-platform mobile applications, subscription systems, in-app purchases, AI-powered features, and scalable Firebase-based backends. Skilled in architecting clean, maintainable mobile apps with performance, UX, and reliability in mind.",
+    "email": "sahil.mobiledev@gmail.com",
+    "telephone": "+91-70168-78751",
     "knowsAbout": [
         "Flutter Development",
         "Dart Programming",
-        "Mobile App Development",
+        "Cross-Platform Mobile App Development",
+        "Android Development",
+        "iOS Development",
         "Firebase",
         "REST APIs",
-        "Python",
-        "JavaScript",
-        "Node.js",
-        "UI/UX Design",
-        "Figma",
+        "State Management (GetX, BLoC, RiverPod)",
+        "MVVM Architecture",
+        "In-App Purchases",
+        "Stripe Integration",
         "AI Integrations",
-        "Cross-Platform Development"
+        "Low-Code Platforms",
+        "FlutterFlow",
+        "UI/UX Design",
+        "Responsive Design",
+        "Google Cloud APIs",
+        "Data Encryption"
     ],
     "knowsLanguage": [
         {
@@ -48,35 +55,68 @@
         "@type": "Occupation",
         "name": "Mobile Application Developer",
         "occupationalCategory": "15-1252.00",
-        "skills": "Flutter, Dart, Firebase, REST APIs, Python, JavaScript, Node.js, Figma, AI Integrations",
-        "educationRequirements": "Bachelor's degree in Computer Science or related field"
+        "skills": "Flutter, Dart, Android, iOS, Firebase, REST APIs, State Management, MVVM, In-App Purchases, Stripe, AI Integrations, Low-Code Platforms",
+        "experienceRequirements": "2+ years of Flutter development experience",
+        "educationRequirements": "Bachelor's degree in Computer Engineering"
     },
-    "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "University Name"
-    },
+    "alumniOf": [
+        {
+            "@type": "CollegeOrUniversity",
+            "name": "Silver Oak College of Engineering & Technology",
+            "location": "India"
+        },
+        {
+            "@type": "EducationalOrganization",
+            "name": "Government Polytechnic Ahmedabad",
+            "location": "India"
+        }
+    ],
     "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN"
     },
     "contactPoint": {
         "@type": "ContactPoint",
-        "email": "sahilchudasama.work@gmail.com",
+        "email": "sahil.mobiledev@gmail.com",
+        "telephone": "+91-70168-78751",
         "contactType": "Professional Inquiries",
         "availableLanguage": "English"
     },
-    "makesOffer": {
-        "@type": "Offer",
-        "itemOffered": {
-            "@type": "Service",
-            "name": "Flutter App Development Services",
-            "description": "Professional mobile app development using Flutter, including design, development, and deployment"
+    "makesOffer": [
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "Flutter App Development Services",
+                "description": "Professional cross-platform mobile app development using Flutter, including design, development, deployment, and maintenance"
+            }
+        },
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "AI Integration Services",
+                "description": "Integration of AI-powered features, chatbots, and machine learning models into mobile applications"
+            }
+        },
+        {
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": "In-App Purchase & Subscription Implementation",
+                "description": "Implementation of subscription models, in-app purchases, and payment integration using Stripe"
+            }
         }
-    },
+    ],
     "subjectOf": {
         "@type": "WebPage",
-        "url": "https://yourdomain.com",
+        "url": "https://sahil48-portfolio.web.app",
         "name": "Sahil Chudasama - Portfolio",
-        "description": "Professional portfolio showcasing Flutter development projects and skills"
-    }
+        "description": "Professional portfolio showcasing Flutter development projects, AI integrations, and mobile engineering expertise"
+    },
+    "award": [
+        "Winner - Wappnet Systems Hackathon 2023",
+        "Participant - Google Cloud & Hack2Skill Agentic AI Day 2025",
+        "Participant - MINed Hackathon, Nirma University"
+    ]
 }

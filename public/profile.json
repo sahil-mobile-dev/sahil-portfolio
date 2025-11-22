@@ -1,65 +1,198 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "version": "1.0.0",
-    "lastUpdated": "2025-11-22T12:57:06+05:30",
+    "version": "2.0.0",
+    "lastUpdated": "2025-11-22T13:08:40+05:30",
     "person": {
         "name": "Sahil Chudasama",
-        "role": "Flutter Developer & Mobile App Engineer",
-        "tagline": "Passionate Flutter developer with strong experience in building scalable and visually stunning apps",
-        "description": "I love building modern apps, solving problems, working with new technologies, and contributing to the community.",
-        "email": "sahilchudasama.work@gmail.com",
+        "role": "Flutter Developer | Cross-Platform App Engineer | AI-Integrated App Builder",
+        "tagline": "Flutter Developer with strong experience in building cross-platform mobile applications",
+        "description": "Flutter Developer with strong experience in building cross-platform mobile applications, subscription systems, in-app purchases, AI-powered features, and scalable Firebase-based backends. Skilled in architecting clean, maintainable mobile apps with performance, UX, and reliability in mind.",
+        "email": "sahil.mobiledev@gmail.com",
+        "phone": "+91 70168 78751",
         "location": {
             "country": "India",
             "timezone": "Asia/Kolkata"
         },
         "urls": {
-            "website": "https://yourdomain.com",
-            "linkedin": "https://linkedin.com/in/sahil-chudasama",
-            "github": "https://github.com/your-github-username"
-        }
+            "portfolio": "https://sahil48-portfolio.web.app",
+            "linkedin": "https://in.linkedin.com/in/sahil-chudasama",
+            "github": "https://github.com/sahil-chudasama"
+        },
+        "resumeLinks": [
+            "https://drive.google.com/file/d/1lr_Mmrd25UrdNwMTw7hqHqp6xxCDLaY8/view",
+            "https://drive.google.com/file/d/1qs7Z12JWIv83NtrQugyIEPJZFFjb4BRo/view",
+            "https://drive.google.com/file/d/1pbnZWBButnwg-wk662SdHDdkNawCrViK/view",
+            "https://drive.google.com/file/d/1QONLjeoU0I44b0TzskZxTD5X6k_Hr3Cs/view"
+        ]
     },
     "professional": {
-        "title": "Flutter Developer & Mobile App Engineer",
+        "title": "Flutter Developer | Cross-Platform App Engineer | AI-Integrated App Builder",
+        "currentRole": "Flutter Developer at Qurious Click",
         "specialization": [
-            "Mobile App Development",
-            "Cross-Platform Development",
+            "Cross-Platform Mobile Development",
+            "AI-Powered Features",
+            "Subscription Systems & In-App Purchases",
+            "Firebase Backend Architecture",
             "UI/UX Implementation",
-            "API Integration",
-            "Firebase Development"
+            "Scalable App Development"
         ],
         "experience": {
             "primary": "Flutter Development",
-            "yearsActive": "2020-present"
+            "yearsActive": "2023-present",
+            "companies": [
+                {
+                    "name": "Qurious Click",
+                    "role": "Flutter Developer",
+                    "type": "Full-time",
+                    "duration": "March 2024 – Present",
+                    "keyAchievements": [
+                        "Designed & developed end-to-end Flutter apps with active users and subscription models",
+                        "Implemented In-App Purchases and Stripe for both Android & iOS",
+                        "Built major features: Chatbot (virtual therapist), Map integrations, MethodChannel, offline handling",
+                        "Enterprise iOS distribution"
+                    ]
+                },
+                {
+                    "name": "Wappnet Systems Pvt. Ltd.",
+                    "role": "Associate Software Developer",
+                    "type": "Full-time",
+                    "duration": "January 2023 – January 2024",
+                    "keyAchievements": [
+                        "Developed and published cross-platform personal finance app (Vyaya)",
+                        "Integrated Firebase Authentication, Firestore, Messaging, and Functions",
+                        "Created ML prototype using TensorFlow Lite & Google ML Kit",
+                        "Used FlutterFlow for rapid prototypes"
+                    ]
+                }
+            ]
         }
     },
     "skills": {
-        "primary": [
+        "mobileDevelopment": [
             "Flutter",
             "Dart",
-            "Firebase",
-            "REST APIs"
+            "Android",
+            "iOS",
+            "Windows",
+            "Responsive UI",
+            "State Management (GetX, BLoC, RiverPod)",
+            "MVVM",
+            "Layered Architecture",
+            "In-App Purchases",
+            "Stripe Integration",
+            "Firebase Services"
         ],
-        "secondary": [
-            "Python",
-            "JavaScript",
-            "Node.js"
+        "aiAndLowCode": [
+            "AI-Assisted Development",
+            "Low-Code Platforms",
+            "Vibe Coding",
+            "Rocket (Dhiwise)",
+            "FlutterFlow",
+            "Lovable",
+            "Vercel",
+            "Google Stitch",
+            "Firebase Studio"
+        ],
+        "backendAndCloud": [
+            "Firebase",
+            "REST APIs",
+            "Google Cloud APIs",
+            "Data Encryption & Decryption"
         ],
         "tools": [
-            "Figma",
+            "Android Studio",
+            "VS Code",
+            "Flutter DevTools",
             "Git",
-            "VS Code"
+            "GitHub",
+            "GitLab",
+            "Fork",
+            "Trello"
         ],
-        "emerging": [
-            "AI Integrations",
-            "Machine Learning APIs"
+        "professionalSkills": [
+            "Project Planning",
+            "Task Prioritization",
+            "Team Collaboration",
+            "Debugging & Troubleshooting",
+            "Communication"
         ]
     },
+    "education": [
+        {
+            "degree": "B.Tech - Computer Engineering",
+            "institute": "Silver Oak College of Engineering & Technology",
+            "year": "2020 - 2023",
+            "cgpa": "8.41"
+        },
+        {
+            "degree": "Diploma - Information Technology",
+            "institute": "Government Polytechnic Ahmedabad",
+            "year": "2017 - 2020",
+            "cgpa": "8.86"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Guru AI",
+            "teamSize": 5,
+            "duration": "30 Hours",
+            "description": "AI-powered educational tool generating culturally relevant lessons, transforming textbook images into interactive worksheets",
+            "highlights": [
+                "AI-driven content generation",
+                "Real-time processing",
+                "Cross-platform functionality"
+            ]
+        },
+        {
+            "name": "Vyaya",
+            "teamSize": 1,
+            "duration": "April 2023 – July 2023",
+            "description": "A personal finance management app with offline data encryption and cloud backup",
+            "playStoreUrl": "https://play.google.com/store/apps/details?id=com.wappnet.vyaya"
+        },
+        {
+            "name": "Motobase",
+            "teamSize": 8,
+            "duration": "March 2025 – Present",
+            "description": "A cross-platform social app for bikers & car communities with real-time messaging, media handling, and social features"
+        }
+    ],
+    "hackathonsAndEvents": [
+        {
+            "name": "Google Cloud & Hack2Skill Agentic AI Day 2025 – Bengaluru",
+            "achievements": [
+                "Built AI-driven solutions under tight deadlines",
+                "Hands-on with AI integration & rapid deployment"
+            ],
+            "links": [
+                "https://www.linkedin.com/posts/sahil-chudasama_agenticai-hack2skill-googlecloud-activity-7355998773044482048-Oela"
+            ]
+        },
+        {
+            "name": "Hackathon 2023 - Wappnet Systems",
+            "achievements": [
+                "Built a superhero-style real-time avatar swap app in 36 hours",
+                "Won the hackathon for creativity and rapid prototyping"
+            ],
+            "links": [
+                "https://www.linkedin.com/posts/sahil-chudasama_ai-hackathon2023-hackathon-activity-7103276179041771520-QPYK"
+            ]
+        },
+        {
+            "name": "MINed Hackathon – Nirma University",
+            "achievements": [
+                "Built a recipe management & shopping app in under 24 hours"
+            ]
+        }
+    ],
     "availability": {
-        "status": "open",
+        "status": "employed",
+        "openToOpportunities": true,
         "roles": [
             "Flutter Developer",
             "Mobile App Developer",
-            "Full Stack Developer"
+            "Cross-Platform Developer",
+            "Full Stack Mobile Developer"
         ],
         "workTypes": [
             "full-time",
@@ -67,48 +200,54 @@
             "freelance"
         ]
     },
-    "projects": {
-        "featured": [],
-        "categories": [
-            "Mobile Applications",
-            "Web Applications",
-            "API Integrations",
-            "UI/UX Implementations"
-        ]
-    },
     "aiContext": {
-        "summary": "Sahil Chudasama is a skilled Flutter developer specializing in mobile app development. He excels at building scalable, visually stunning applications using Flutter, Dart, and Firebase. He is passionate about modern technologies, problem-solving, and community contribution.",
+        "summary": "Sahil Chudasama is an experienced Flutter developer specializing in cross-platform mobile app development with AI integrations, subscription systems, and Firebase backends. He has worked at Qurious Click and Wappnet Systems, building production apps with thousands of users. He is skilled in state management, clean architecture, in-app purchases, and modern development tools.",
         "expertise": [
-            "Building cross-platform mobile applications with Flutter",
-            "Creating responsive and beautiful user interfaces",
-            "Integrating Firebase backend services",
-            "Implementing RESTful APIs",
-            "Modern web development with JavaScript/Node.js",
-            "AI and ML integrations in mobile apps"
+            "Building cross-platform mobile applications with Flutter for Android, iOS, and Windows",
+            "Implementing subscription models and in-app purchases using Stripe",
+            "Integrating AI-powered features like chatbots and ML models",
+            "Architecting scalable Firebase backends with Authentication, Firestore, and Cloud Functions",
+            "Creating responsive, pixel-perfect UIs with excellent UX",
+            "Using low-code/AI-assisted tools like FlutterFlow and Google Stitch",
+            "Team collaboration and agile development practices"
         ],
-        "workStyle": "Detail-oriented developer who balances aesthetics with functionality. Focuses on scalable architecture and clean code practices.",
+        "workStyle": "Detail-oriented developer who balances aesthetics with functionality. Focuses on scalable architecture, clean code practices, and delivering production-ready apps. Experienced in both independent and team-based development.",
         "interests": [
             "Mobile Development",
-            "UI/UX Design",
             "AI/ML Integration",
-            "Open Source Contribution",
-            "Tech Community Building"
+            "Cross-Platform Solutions",
+            "UI/UX Design",
+            "Firebase & Cloud Services",
+            "Hackathons & Community Events",
+            "Low-Code & AI-Assisted Development"
+        ],
+        "notableAchievements": [
+            "Published personal finance app Vyaya with offline encryption",
+            "Won Wappnet Systems Hackathon 2023 for AI avatar swap app",
+            "Participated in Google Cloud Agentic AI Day 2025",
+            "Built enterprise iOS distribution systems",
+            "Developed AI-powered chatbot features for mental health apps"
         ]
     },
     "contact": {
-        "primary": "sahilchudasama.work@gmail.com",
+        "primary": "sahil.mobiledev@gmail.com",
+        "phone": "+91 70168 78751",
         "preferredMethod": "email",
         "responseTime": "24-48 hours"
     },
     "metadata": {
         "format": "AI-Discoverable Profile",
-        "purpose": "Enable LLMs and AI agents to understand professional profile",
+        "version": "2.0.0",
+        "purpose": "Enable LLMs and AI agents to understand professional profile and experience",
         "compatibleWith": [
             "ChatGPT",
             "Claude",
             "Gemini",
             "Perplexity",
-            "Search Engines"
-        ]
+            "Search Engines",
+            "AI Recruiting Tools"
+        ],
+        "updatedBy": "Sahil Chudasama",
+        "lastReviewed": "2025-11-22"
     }
 }

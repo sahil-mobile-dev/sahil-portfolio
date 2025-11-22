@@ -1,11 +1,12 @@
 # security.txt - Security Policy
 # https://securitytxt.org/
 
-Contact: mailto:sahilchudasama.work@gmail.com
-Contact: https://linkedin.com/in/sahil-chudasama
+Contact: mailto:sahil.mobiledev@gmail.com
+Contact: https://in.linkedin.com/in/sahil-chudasama
+Contact: https://sahil48-portfolio.web.app/contact
 Expires: 2026-11-22T23:59:59.000Z
 Preferred-Languages: en
-Canonical: https://yourdomain.com/.well-known/security.txt
+Canonical: https://sahil48-portfolio.web.app/.well-known/security.txt
 
 # Security Disclosure
 # If you discover a security vulnerability, please report it responsibly.

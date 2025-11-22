@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sahil Chudasama - Portfolio Website
 
-## Getting Started
+A premium, fully responsive portfolio website built with Next.js, Tailwind CSS, and Framer Motion. Integrated with Firebase Firestore for contact form submissions.
 
-First, run the development server:
+## 🚀 Getting Started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
+- Node.js installed
+- Firebase account
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1.  **Clone the repository** (if applicable) or navigate to the project folder:
+    ```bash
+    cd sahil-portfolio
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-## Learn More
+3.  **Configure Firebase**:
+    - Go to [Firebase Console](https://console.firebase.google.com/).
+    - Create a new project.
+    - Add a Web App to get your `firebaseConfig`.
+    - Enable **Firestore Database** in test mode (or set up rules).
+    - Create a collection named `messages`.
+    - Open `lib/firebase.js` and replace the placeholder config with your actual Firebase configuration.
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Run locally**:
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔥 Deployment to Firebase Hosting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Install Firebase Tools** (if not already installed):
+    ```bash
+    npm install -g firebase-tools
+    ```
 
-## Deploy on Vercel
+2.  **Login to Firebase**:
+    ```bash
+    firebase login
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Initialize Firebase in the project**:
+    ```bash
+    firebase init
+    ```
+    - Select **Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys**.
+    - Select **Firestore: Configure security rules and indexes files for Firestore** (optional, but good for rules).
+    - Select **Use an existing project** and choose your project.
+    - **What do you want to use as your public directory?** `out` (for static export) OR `.next` (if using experimental web frameworks support, but standard static export is safer for simple hosting).
+    *RECOMMENDED FOR NEXT.JS ON FIREBASE HOSTING:*
+    Use the experimental web frameworks support which handles the build automatically.
+    When asked "Detected a Next.js codebase. This is an experimental integration, proceed?", say **Yes**.
+    - **Set up automatic builds and deploys with GitHub?** No (unless you want to).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  **Deploy**:
+    ```bash
+    firebase deploy
+    ```
+
+## 🛠️ Tech Stack
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Backend**: Firebase Firestore
+
+## 📁 Folder Structure
+- `app/`: Main application routes and layout.
+- `components/`: Reusable UI components (Hero, About, Projects, etc.).
+- `lib/`: Utility functions and Firebase configuration.

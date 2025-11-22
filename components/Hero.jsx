@@ -35,7 +35,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-slate-100"
                     >
-                        Hi, I'm <span className="text-gradient">Sahil Chudasama</span>
+                        Hi, I&apos;m <span className="text-gradient">Sahil Chudasama</span>
                         <br />
                         <span className="text-2xl md:text-4xl mt-4 block font-normal text-slate-400">
                             Flutter Developer | Cross-Platform App Engineer

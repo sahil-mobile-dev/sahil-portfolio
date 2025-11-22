@@ -36,7 +36,7 @@ export default function FirebaseExample() {
                 <div className="bg-yellow-900/20 border border-yellow-500 rounded-lg p-6 max-w-lg">
                     <h2 className="text-yellow-400 text-xl font-bold mb-2">No Data Found</h2>
                     <p className="text-gray-300">
-                        Connected to Firebase successfully, but no documents found in the 'portfolio' collection.
+                        Connected to Firebase successfully, but no documents found in the &apos;portfolio&apos; collection.
                     </p>
                     <p className="text-gray-400 text-sm mt-4">
                         Add some test data to your Firestore collection to see it displayed here.

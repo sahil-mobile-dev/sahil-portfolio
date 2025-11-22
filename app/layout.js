@@ -1,5 +1,6 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${poppins.variable} font-sans bg-slate-900 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white`}>
+        <AnalyticsTracker />
         {children}
       </body>
     </html>

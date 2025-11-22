@@ -1,33 +1,24 @@
 "use client";
 
+"use client";
+
 import { useEffect, useState } from "react";
 import { subscribeToRealtimeStats } from "@/lib/analytics";
 import { BarChart, Activity, Users, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Dashboard() {
-    const [stats, setStats] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [stats, setStats] = useState({ totalViews: 0, lastUpdated: null });
 
     useEffect(() => {
         const unsubscribe = subscribeToRealtimeStats((data) => {
-            setStats(data);
-            setLoading(false);
+            if (data) {
+                setStats(data);
+            }
         });
 
         return () => unsubscribe();
     }, []);
-
-    if (loading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-400">
-                <div className="animate-pulse flex flex-col items-center gap-4">
-                    <Activity className="w-10 h-10 text-sky-500 animate-spin" />
-                    <p>Connecting to Realtime Analytics...</p>
-                </div>
-            </div>
-        );
-    }
 
     return (
         <div className="min-h-screen bg-slate-950 text-slate-200 p-8 pt-24">
@@ -70,6 +61,7 @@ export default function Dashboard() {
                 {/* Placeholder for more detailed charts */}
                 <div className="glass-panel p-8 rounded-2xl border border-slate-800/50 text-center py-20">
                     <p className="text-slate-500">More detailed analytics charts coming soon...</p>
+                    <p className="text-slate-600 text-sm mt-2">Powered by Mixpanel</p>
                 </div>
             </div>
         </div>

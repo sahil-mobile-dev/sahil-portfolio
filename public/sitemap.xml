@@ -6,7 +6,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://sahil48-portfolio.web.app/</loc>
+    <loc>https://sahilchudasama-mobiledev.web.app/</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://sahil48-portfolio.web.app/about</loc>
+    <loc>https://sahilchudasama-mobiledev.web.app/about</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
   
   <!-- Projects Page -->
   <url>
-    <loc>https://sahil48-portfolio.web.app/projects</loc>
+    <loc>https://sahilchudasama-mobiledev.web.app/projects</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
   
   <!-- Contact Page -->
   <url>
-    <loc>https://sahil48-portfolio.web.app/contact</loc>
+    <loc>https://sahilchudasama-mobiledev.web.app/contact</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -38,7 +38,7 @@
   
   <!-- AI Profile Endpoint -->
   <url>
-    <loc>https://sahil48-portfolio.web.app/profile.json</loc>
+    <loc>https://sahilchudasama-mobiledev.web.app/profile.json</loc>
     <lastmod>2025-11-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -1,38 +1,63 @@
 @import "tailwindcss";
 
 :root {
-  --foreground-rgb: 255, 255, 255;
+  --foreground-rgb: 226, 232, 240;
+  /* Slate 200 */
   --background-start-rgb: 15, 23, 42;
-  --background-end-rgb: 15, 23, 42;
+  /* Slate 900 */
+  --background-end-rgb: 2, 6, 23;
+  /* Slate 950 */
+  --accent-primary: 56, 189, 248;
+  /* Sky 400 */
+  --accent-secondary: 99, 102, 241;
+  /* Indigo 500 */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom right,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb)));
+  min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400;
+  }
+
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/50;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+
+  .container-width {
+    @apply max-w-6xl mx-auto px-6;
   }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #334155;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #475569;
+}
+
+html {
+  scroll-behavior: smooth;
 }

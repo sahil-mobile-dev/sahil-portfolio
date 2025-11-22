@@ -35,8 +35,8 @@ Disallow: /_next/
 Disallow: /admin/
 
 # Sitemap location
-Sitemap: https://sahil48-portfolio.web.app/sitemap.xml
-Sitemap: https://sahil48-portfolio.web.app/feed.xml
+Sitemap: https://sahilchudasama-mobiledev.web.app/sitemap.xml
+Sitemap: https://sahilchudasama-mobiledev.web.app/feed.xml
 
 # Crawl-delay (optional, adjust as needed)
 Crawl-delay: 0

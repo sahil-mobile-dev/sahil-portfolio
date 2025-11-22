@@ -1,51 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User } from "lucide-react";
+import { User, Code, Smartphone, Zap } from "lucide-react";
 
 export default function About() {
     return (
-        <section id="about" className="py-20 bg-slate-900 relative">
-            <div className="container mx-auto px-6">
+        <section id="about" className="section-padding relative overflow-hidden">
+            <div className="container-width relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="flex flex-col md:flex-row items-center gap-12"
+                    className="max-w-3xl mx-auto"
                 >
-                    {/* Image Placeholder */}
-                    <div className="w-full md:w-1/2 flex justify-center">
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 group-hover:opacity-0 transition-opacity" />
-                            <div className="flex items-center justify-center h-full text-slate-500">
-                                <User className="w-20 h-20" />
-                            </div>
-                            {/* Add your image here: <Image src="/your-image.jpg" fill className="object-cover" /> */}
-                        </div>
-                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                        About <span className="text-gradient">Me</span>
+                    </h2>
 
-                    {/* Content */}
-                    <div className="w-full md:w-1/2">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            About <span className="text-gradient">Me</span>
-                        </h2>
-                        <p className="text-slate-400 text-lg leading-relaxed mb-6">
-                            I'm a passionate Flutter Developer with a strong foundation in building scalable,
-                            high-performance mobile applications. My journey in tech is driven by a curiosity
-                            to solve complex problems and a desire to create digital experiences that make a difference.
-                        </p>
-                        <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                            With expertise in both frontend and backend technologies, I bring a holistic approach
-                            to development. Whether it's crafting pixel-perfect UIs or architecting robust
-                            backend systems with Firebase, I ensure every project is built to last.
+                    <div className="glass-panel rounded-3xl p-8 md:p-12">
+                        <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                            I am a <span className="text-sky-400 font-semibold">Flutter Developer</span> with strong experience in building cross-platform mobile applications,
+                            subscription systems, in-app purchases, AI-powered features, and scalable Firebase-based backends.
+                            Skilled in architecting clean, maintainable mobile apps with performance, UX, and reliability in mind.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-6">
-                            <Stat number="3+" label="Years Experience" />
-                            <Stat number="20+" label="Projects Completed" />
-                            <Stat number="10+" label="Happy Clients" />
-                            <Stat number="24/7" label="Support" />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                            <FeatureCard
+                                icon={<Smartphone className="w-6 h-6 text-sky-400" />}
+                                title="Cross-Platform Dev"
+                                description="Building seamless apps for Android, iOS, and Windows using Flutter."
+                            />
+                            <FeatureCard
+                                icon={<Zap className="w-6 h-6 text-indigo-400" />}
+                                title="AI Integration"
+                                description="Integrating AI-powered features like chatbots and ML models."
+                            />
+                            <FeatureCard
+                                icon={<Code className="w-6 h-6 text-sky-400" />}
+                                title="Clean Architecture"
+                                description="Scalable codebases with MVVM, BLoC, and Riverpod."
+                            />
+                            <FeatureCard
+                                icon={<User className="w-6 h-6 text-indigo-400" />}
+                                title="User-Centric UX"
+                                description="Creating responsive, pixel-perfect UIs with excellent UX."
+                            />
                         </div>
                     </div>
                 </motion.div>
@@ -54,11 +54,14 @@ export default function About() {
     );
 }
 
-function Stat({ number, label }) {
+function FeatureCard({ icon, title, description }) {
     return (
-        <div>
-            <h3 className="text-3xl font-bold text-white mb-1">{number}</h3>
-            <p className="text-slate-500 text-sm">{label}</p>
+        <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800/50 transition-colors">
+            <div className="mt-1">{icon}</div>
+            <div>
+                <h3 className="font-semibold text-slate-200 mb-1">{title}</h3>
+                <p className="text-sm text-slate-400">{description}</p>
+            </div>
         </div>
     );
 }

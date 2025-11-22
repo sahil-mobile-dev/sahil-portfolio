@@ -2,100 +2,113 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-slate-900/90 backdrop-blur-md shadow-lg py-4" : "bg-transparent py-6"
-                }`}
-        >
-            <div className="container mx-auto px-6 flex justify-between items-center">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="p-2 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg group-hover:scale-110 transition-transform">
-                        <Code2 className="w-6 h-6 text-white" />
-                    </div>
-                    <span className="text-xl font-bold text-white tracking-tight group-hover:text-cyan-400 transition-colors">
-                        Sahil<span className="text-cyan-400">.dev</span>
-                    </span>
-                </Link>
-
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
+        <>
+            <motion.nav
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "py-4" : "py-6"
+                    }`}
+            >
+                <div className="container-width">
+                    <div
+                        className={`relative flex items-center justify-between px-6 py-3 rounded-2xl transition-all duration-300 ${isScrolled
+                                ? "bg-slate-900/80 backdrop-blur-md border border-slate-800/50 shadow-lg shadow-slate-900/20"
+                                : "bg-transparent"
+                            }`}
+                    >
+                        {/* Logo */}
                         <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors relative group"
+                            href="/"
+                            className="text-xl font-bold tracking-tight text-slate-100 hover:text-sky-400 transition-colors"
                         >
-                            {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full" />
+                            Sahil<span className="text-sky-400">.</span>dev
                         </Link>
-                    ))}
-                    <Link
-                        href="#contact"
-                        className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all transform hover:-translate-y-0.5"
-                    >
-                        Hire Me
-                    </Link>
-                </div>
 
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden p-2 text-slate-300 hover:text-white transition-colors"
-                >
-                    {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
-            </div>
-
-            {/* Mobile Menu Overlay */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-slate-900 border-t border-slate-800 overflow-hidden"
-                    >
-                        <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+                        {/* Desktop Navigation */}
+                        <div className="hidden md:flex items-center gap-8">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-lg font-medium text-slate-300 hover:text-cyan-400 transition-colors"
+                                    className="text-sm font-medium text-slate-400 hover:text-sky-400 transition-colors"
                                 >
                                     {link.name}
                                 </Link>
                             ))}
+                            <Link
+                                href="#contact"
+                                className="px-4 py-2 text-sm font-medium text-slate-900 bg-sky-400 rounded-full hover:bg-sky-300 transition-colors"
+                            >
+                                Hire Me
+                            </Link>
+                        </div>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            className="md:hidden p-2 text-slate-400 hover:text-white"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        >
+                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
+                </div>
+            </motion.nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl pt-28 px-6 md:hidden"
+                    >
+                        <div className="flex flex-col gap-6">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="text-2xl font-medium text-slate-300 hover:text-sky-400 transition-colors"
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                            <Link
+                                href="#contact"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="mt-4 px-6 py-3 text-center font-medium text-slate-900 bg-sky-400 rounded-full hover:bg-sky-300 transition-colors"
+                            >
+                                Hire Me
+                            </Link>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }

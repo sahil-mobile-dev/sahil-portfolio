@@ -1,79 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Calendar, Briefcase } from "lucide-react";
 
 const experiences = [
     {
-        role: "Senior Flutter Developer",
-        company: "Tech Solutions Inc.",
-        period: "2023 - Present",
-        description: "Leading a team of mobile developers, architecting scalable apps, and implementing CI/CD pipelines.",
+        company: "Qurious Click",
+        role: "Flutter Developer",
+        period: "March 2024 – Present",
+        description: [
+            "Designed & developed end-to-end Flutter apps with active users and subscription models",
+            "Implemented In-App Purchases and Stripe for both Android & iOS",
+            "Built major features: Chatbot (virtual therapist), Map integrations, MethodChannel, offline handling",
+            "Enterprise iOS distribution"
+        ]
     },
     {
-        role: "Mobile App Developer",
-        company: "Creative Agency",
-        period: "2021 - 2023",
-        description: "Developed cross-platform mobile applications for various clients using Flutter and Firebase.",
-    },
-    {
-        role: "Junior Developer",
-        company: "StartUp Hub",
-        period: "2020 - 2021",
-        description: "Assisted in frontend development and bug fixing for mobile and web applications.",
-    },
+        company: "Wappnet Systems Pvt. Ltd.",
+        role: "Associate Software Developer",
+        period: "January 2023 – January 2024",
+        description: [
+            "Developed and published cross-platform personal finance app (Vyaya)",
+            "Integrated Firebase Authentication, Firestore, Messaging, and Functions",
+            "Created ML prototype using TensorFlow Lite & Google ML Kit",
+            "Used FlutterFlow for rapid prototypes"
+        ]
+    }
 ];
 
 export default function Experience() {
     return (
-        <section id="experience" className="py-20 bg-slate-800/50">
-            <div className="container mx-auto px-6">
+        <section id="experience" className="section-padding relative">
+            <div className="container-width">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                         Work <span className="text-gradient">Experience</span>
                     </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto">
-                        My professional journey and career milestones.
-                    </p>
-                </motion.div>
 
-                <div className="max-w-3xl mx-auto">
-                    {experiences.map((exp, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative pl-8 pb-12 last:pb-0 border-l-2 border-slate-700 last:border-l-0"
-                        >
-                            {/* Timeline Dot */}
-                            <div className="absolute left-[-9px] top-0 w-4 h-4 bg-cyan-500 rounded-full ring-4 ring-slate-900" />
+                    <div className="max-w-3xl mx-auto space-y-8">
+                        {experiences.map((exp, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="glass-panel p-8 rounded-2xl relative overflow-hidden group"
+                            >
+                                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-sky-400 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                            <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 hover:border-cyan-500/30 transition-colors">
-                                <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                                    <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                                        <Briefcase className="w-5 h-5 text-cyan-400" />
-                                        {exp.role}
-                                    </h3>
-                                    <span className="text-sm text-slate-500 font-medium bg-slate-800 px-3 py-1 rounded-full mt-2 md:mt-0 w-fit">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+                                    <div>
+                                        <h3 className="text-xl font-bold text-slate-100 flex items-center gap-2">
+                                            <Briefcase className="w-5 h-5 text-sky-400" />
+                                            {exp.role}
+                                        </h3>
+                                        <p className="text-sky-400 font-medium mt-1">{exp.company}</p>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-slate-400 text-sm bg-slate-800/50 px-3 py-1 rounded-full w-fit">
+                                        <Calendar className="w-4 h-4" />
                                         {exp.period}
-                                    </span>
+                                    </div>
                                 </div>
-                                <p className="text-cyan-400 font-medium mb-3">{exp.company}</p>
-                                <p className="text-slate-400 text-sm leading-relaxed">
-                                    {exp.description}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+
+                                <ul className="space-y-3">
+                                    {exp.description.map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                                            <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-indigo-400 flex-shrink-0" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

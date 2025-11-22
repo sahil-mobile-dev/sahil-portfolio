@@ -7,34 +7,38 @@ import Link from "next/link";
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[128px]" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px]" />
+            {/* Minimalist Background Elements */}
+            <div className="absolute inset-0 overflow-hidden -z-10">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950 opacity-80" />
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-[100px] animate-pulse" />
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] animate-pulse delay-1000" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col items-center text-center">
+            <div className="container-width relative z-10">
+                <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 mb-8"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-800 mb-8 backdrop-blur-sm"
                     >
-                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-sm text-slate-300">Available for Freelance Projects</span>
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                        </span>
+                        <span className="text-sm text-slate-400 font-medium">Available for Freelance Projects</span>
                     </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+                        className="text-5xl md:text-7xl font-bold mb-8 tracking-tight text-slate-100"
                     >
                         Hi, I'm <span className="text-gradient">Sahil Chudasama</span>
                         <br />
-                        <span className="text-slate-400 text-3xl md:text-5xl mt-4 block">
-                            Flutter Developer & Mobile App Engineer
+                        <span className="text-2xl md:text-4xl mt-4 block font-normal text-slate-400">
+                            Flutter Developer | Cross-Platform App Engineer
                         </span>
                     </motion.h1>
 
@@ -42,10 +46,10 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed"
+                        className="text-lg text-slate-400 max-w-2xl mb-12 leading-relaxed"
                     >
-                        Passionate about building scalable and visually stunning apps. I love problem-solving,
-                        modern tech, open-source, and creating impactful digital experiences.
+                        Flutter Developer with strong experience in building cross-platform mobile applications,
+                        subscription systems, in-app purchases, AI-powered features, and scalable Firebase-based backends.
                     </motion.p>
 
                     <motion.div
@@ -56,13 +60,13 @@ export default function Hero() {
                     >
                         <Link
                             href="#projects"
-                            className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-1 flex items-center gap-2"
+                            className="px-8 py-4 bg-slate-100 text-slate-900 rounded-full font-semibold hover:bg-white transition-all transform hover:-translate-y-1 flex items-center gap-2 shadow-lg shadow-slate-100/10"
                         >
                             View My Work <ArrowRight className="w-5 h-5" />
                         </Link>
                         <Link
                             href="#contact"
-                            className="px-8 py-4 bg-slate-800 text-white rounded-full font-semibold border border-slate-700 hover:bg-slate-700 transition-all transform hover:-translate-y-1"
+                            className="px-8 py-4 bg-slate-900 text-slate-300 rounded-full font-semibold border border-slate-800 hover:bg-slate-800 hover:text-white transition-all transform hover:-translate-y-1"
                         >
                             Contact Me
                         </Link>
@@ -72,11 +76,11 @@ export default function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="mt-12 flex items-center gap-6"
+                        className="mt-16 flex items-center gap-6"
                     >
-                        <SocialLink href="https://github.com" icon={<Github className="w-6 h-6" />} />
-                        <SocialLink href="https://linkedin.com/in/sahil-chudasama" icon={<Linkedin className="w-6 h-6" />} />
-                        <SocialLink href="mailto:sahilchudasama.work@gmail.com" icon={<Mail className="w-6 h-6" />} />
+                        <SocialLink href="https://github.com/sahil-chudasama" icon={<Github className="w-5 h-5" />} label="GitHub" />
+                        <SocialLink href="https://in.linkedin.com/in/sahil-chudasama" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" />
+                        <SocialLink href="mailto:sahil.mobiledev@gmail.com" icon={<Mail className="w-5 h-5" />} label="Email" />
                     </motion.div>
                 </div>
             </div>
@@ -84,13 +88,14 @@ export default function Hero() {
     );
 }
 
-function SocialLink({ href, icon }) {
+function SocialLink({ href, icon, label }) {
     return (
         <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-slate-800/50 rounded-full text-slate-400 hover:text-white hover:bg-slate-700 transition-all hover:scale-110 border border-slate-700"
+            aria-label={label}
+            className="p-3 bg-slate-900/50 rounded-full text-slate-400 hover:text-sky-400 hover:bg-slate-800 transition-all hover:scale-110 border border-slate-800"
         >
             {icon}
         </a>

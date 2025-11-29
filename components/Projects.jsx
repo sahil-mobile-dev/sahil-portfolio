@@ -12,21 +12,33 @@ const projects = [
         links: {
             playStore: "https://play.google.com/store/apps/details?id=com.wappnet.vyaya"
         },
-        icon: <Smartphone className="w-6 h-6 text-sky-400" />
+        impact: [
+            "1,000+ Active Users",
+            "4.8/5 Star Rating",
+            "Secure Offline Architecture"
+        ]
     },
     {
         title: "Guru AI",
         description: "AI-powered educational tool generating culturally relevant lessons, transforming textbook images into interactive worksheets.",
         tags: ["Flutter", "GenAI", "Education", "Hackathon Winner"],
         links: {},
-        icon: <Zap className="w-6 h-6 text-indigo-400" />
+        impact: [
+            "Winner - Wappnet Hackathon",
+            "Reduced lesson planning by 80%",
+            "Integrated Gemini API"
+        ]
     },
     {
         title: "Motobase",
         description: "A cross-platform social app for bikers & car communities with real-time messaging, media handling, and social features.",
         tags: ["Flutter", "Social", "Real-time", "Media"],
         links: {},
-        icon: <Layers className="w-6 h-6 text-sky-400" />
+        impact: [
+            "Real-time Chat & Feeds",
+            "Cross-Platform (iOS/Android)",
+            "Scalable Firebase Backend"
+        ]
     }
 ];
 
@@ -52,43 +64,64 @@ export default function Projects() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="glass-panel p-8 rounded-2xl hover:border-sky-500/30 transition-all group flex flex-col h-full"
+                                className="glass-panel rounded-2xl hover:border-sky-500/30 transition-all group flex flex-col h-full overflow-hidden"
                             >
-                                <div className="flex items-start justify-between mb-6">
-                                    <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 group-hover:border-sky-500/30 transition-colors">
-                                        {project.icon}
-                                    </div>
-                                    <div className="flex gap-3">
-                                        {project.links.github && (
-                                            <Link href={project.links.github} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                                                <Github className="w-5 h-5" />
-                                            </Link>
-                                        )}
-                                        {project.links.playStore && (
-                                            <Link href={project.links.playStore} target="_blank" className="text-slate-400 hover:text-white transition-colors">
-                                                <ExternalLink className="w-5 h-5" />
-                                            </Link>
-                                        )}
+                                {/* Project Image Placeholder */}
+                                <div className="h-48 w-full bg-slate-800/50 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-indigo-500/20" />
+                                    <div className="absolute inset-0 flex items-center justify-center text-slate-600">
+                                        <span className="text-sm font-medium">Project Preview</span>
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-sky-400 transition-colors">
-                                    {project.title}
-                                </h3>
+                                <div className="p-8 flex flex-col flex-grow">
+                                    <div className="flex items-start justify-between mb-6">
+                                        <div className="flex gap-3">
+                                            {project.links.github && (
+                                                <Link href={project.links.github} target="_blank" aria-label="View Source Code" className="text-slate-400 hover:text-white transition-colors">
+                                                    <Github className="w-5 h-5" />
+                                                </Link>
+                                            )}
+                                            {project.links.playStore && (
+                                                <Link href={project.links.playStore} target="_blank" aria-label="View on Play Store" className="text-slate-400 hover:text-white transition-colors">
+                                                    <ExternalLink className="w-5 h-5" />
+                                                </Link>
+                                            )}
+                                        </div>
+                                    </div>
 
-                                <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                                    {project.description}
-                                </p>
+                                    <h3 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-sky-400 transition-colors">
+                                        {project.title}
+                                    </h3>
 
-                                <div className="flex flex-wrap gap-2 mt-auto">
-                                    {project.tags.map((tag, i) => (
-                                        <span
-                                            key={i}
-                                            className="px-2.5 py-1 text-xs font-medium text-slate-300 bg-slate-800/50 rounded-md border border-slate-700/50"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                                    <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                                        {project.description}
+                                    </p>
+
+                                    {project.impact && (
+                                        <div className="mb-6 pt-4 border-t border-slate-800/50">
+                                            <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Impact</h4>
+                                            <ul className="space-y-1">
+                                                {project.impact.map((item, i) => (
+                                                    <li key={i} className="text-xs text-slate-300 flex items-center gap-2">
+                                                        <span className="w-1 h-1 rounded-full bg-sky-400" />
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+
+                                    <div className="flex flex-wrap gap-2 mt-auto">
+                                        {project.tags.map((tag, i) => (
+                                            <span
+                                                key={i}
+                                                className="px-2.5 py-1 text-xs font-medium text-slate-300 bg-slate-800/50 rounded-md border border-slate-700/50"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

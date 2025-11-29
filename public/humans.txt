@@ -9,7 +9,7 @@
     Phone: +91 70168 78751
     Portfolio: https://sahil48-portfolio.web.app
     LinkedIn: https://in.linkedin.com/in/sahil-chudasama
-    GitHub: https://github.com/sahil-chudasama
+    GitHub: https://github.com/sahil-mobile-dev
     Location: India
     
 # EDUCATION

@@ -4,15 +4,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
+import BackgroundAnimation from "./BackgroundAnimation";
+
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-            {/* Minimalist Background Elements */}
-            <div className="absolute inset-0 overflow-hidden -z-10">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950 opacity-80" />
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-[100px] animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px] animate-pulse delay-1000" />
-            </div>
+            <BackgroundAnimation />
 
             <div className="container-width relative z-10">
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
@@ -78,7 +75,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="mt-16 flex items-center gap-6"
                     >
-                        <SocialLink href="https://github.com/sahil-chudasama" icon={<Github className="w-5 h-5" />} label="GitHub" />
+                        <SocialLink href="https://github.com/sahil-mobile-dev" icon={<Github className="w-5 h-5" />} label="GitHub" />
                         <SocialLink href="https://in.linkedin.com/in/sahil-chudasama" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" />
                         <SocialLink href="mailto:sahil.mobiledev@gmail.com" icon={<Mail className="w-5 h-5" />} label="Email" />
                     </motion.div>

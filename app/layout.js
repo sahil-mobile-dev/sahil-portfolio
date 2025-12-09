@@ -39,7 +39,8 @@ export const metadata = {
     images: ["/og-image.png"], // TODO: Generate this image
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
+    apple: "/icon.png", // For iOS home screen
   },
 };
 

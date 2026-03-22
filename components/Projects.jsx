@@ -1,122 +1,120 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Layers, Smartphone, Zap } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
-
-const projects = [
-    {
-        title: "Vyaya",
-        description: "A personal finance management app with offline data encryption and cloud backup. Features secure local storage and seamless synchronization.",
-        tags: ["Flutter", "Firebase", "Encryption", "Offline-First"],
-        links: {
-            playStore: "https://play.google.com/store/apps/details?id=com.wappnet.vyaya"
-        },
-        impact: [
-            "1,000+ Active Users",
-            "4.8/5 Star Rating",
-            "Secure Offline Architecture"
-        ]
-    },
-    {
-        title: "Guru AI",
-        description: "AI-powered educational tool generating culturally relevant lessons, transforming textbook images into interactive worksheets.",
-        tags: ["Flutter", "GenAI", "Education", "Hackathon Winner"],
-        links: {},
-        impact: [
-            "Winner - Wappnet Hackathon",
-            "Reduced lesson planning by 80%",
-            "Integrated Gemini API"
-        ]
-    },
-    {
-        title: "Motobase",
-        description: "A cross-platform social app for bikers & car communities with real-time messaging, media handling, and social features.",
-        tags: ["Flutter", "Social", "Real-time", "Media"],
-        links: {},
-        impact: [
-            "Real-time Chat & Feeds",
-            "Cross-Platform (iOS/Android)",
-            "Scalable Firebase Backend"
-        ]
-    }
-];
+import { useFirestoreDoc } from "@/lib/hooks/useFirestoreDoc";
 
 export default function Projects() {
+    const { data: projectsData, loading } = useFirestoreDoc("portfolio_projects");
+
+    if (loading || !projectsData) {
+        return <section id="projects" className="section-padding"><div className="container-width animate-pulse h-screen bg-slate-800/30 rounded-3xl"></div></section>;
+    }
+
+    const projects = projectsData.items || [];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1
+            }
+        }
+    };
+
+    const projectVariants = {
+        hidden: { opacity: 0, scale: 0.95, y: 30 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    };
+
     return (
-        <section id="projects" className="section-padding relative">
+        <section id="projects" className="section-padding relative bg-slate-900/60">
             <div className="container-width">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                        Featured <span className="text-gradient">Projects</span>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center text-white">
+                        Featured <span className="text-accent">Projects</span>
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <motion.div 
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    >
                         {projects.map((project, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="glass-panel rounded-2xl hover:border-sky-500/30 transition-all group flex flex-col h-full overflow-hidden"
+                                variants={projectVariants}
+                                whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                                className="glass-panel group flex flex-col h-full overflow-hidden rounded-[2rem] border-slate-700/30 hover:border-sky-500/30 transition-all duration-500 shadow-2xl shadow-sky-500/5 group"
                             >
                                 {/* Project Image Placeholder */}
-                                <div className="h-48 w-full bg-slate-800/50 relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                                    <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-indigo-500/20" />
-                                    <div className="absolute inset-0 flex items-center justify-center text-slate-600">
-                                        <span className="text-sm font-medium">Project Preview</span>
+                                <div className="h-56 w-full bg-slate-800/80 relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-transparent z-10" />
+                                    <div className="absolute inset-0 flex items-center justify-center text-slate-500 group-hover:scale-110 transition-transform duration-700">
+                                        <div className="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center bg-slate-900/50 backdrop-blur-sm">
+                                            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Preview</span>
+                                        </div>
                                     </div>
+                                    {/* Hover Overlay */}
+                                    <div className="absolute inset-0 bg-sky-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
                                 </div>
 
-                                <div className="p-8 flex flex-col flex-grow">
-                                    <div className="flex items-start justify-between mb-6">
-                                        <div className="flex gap-3">
+                                <div className="p-8 flex flex-col flex-grow bg-slate-900/40">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h3 className="text-xl font-bold text-white group-hover:text-sky-400 transition-colors duration-300">
+                                            {project.title}
+                                        </h3>
+                                        <div className="flex gap-4">
                                             {project.links.github && (
-                                                <Link href={project.links.github} target="_blank" aria-label="View Source Code" className="text-slate-400 hover:text-white transition-colors">
+                                                <Link href={project.links.github} target="_blank" aria-label="View Source Code" className="text-slate-400 hover:text-sky-400 hover:scale-110 transition-all">
                                                     <Github className="w-5 h-5" />
                                                 </Link>
                                             )}
                                             {project.links.playStore && (
-                                                <Link href={project.links.playStore} target="_blank" aria-label="View on Play Store" className="text-slate-400 hover:text-white transition-colors">
+                                                <Link href={project.links.playStore} target="_blank" aria-label="View on Play Store" className="text-slate-400 hover:text-sky-400 hover:scale-110 transition-all">
                                                     <ExternalLink className="w-5 h-5" />
                                                 </Link>
                                             )}
                                         </div>
                                     </div>
 
-                                    <h3 className="text-xl font-bold text-slate-100 mb-3 group-hover:text-sky-400 transition-colors">
-                                        {project.title}
-                                    </h3>
-
-                                    <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                                    <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
                                         {project.description}
                                     </p>
 
                                     {project.impact && (
                                         <div className="mb-6 pt-4 border-t border-slate-800/50">
-                                            <h4 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Impact</h4>
-                                            <ul className="space-y-1">
-                                                {project.impact.map((item, i) => (
-                                                    <li key={i} className="text-xs text-slate-300 flex items-center gap-2">
-                                                        <span className="w-1 h-1 rounded-full bg-sky-400" />
+                                            <div className="flex flex-col gap-2">
+                                                {project.impact.slice(0, 2).map((item, i) => (
+                                                    <div key={i} className="text-[11px] text-sky-400 font-medium flex items-center gap-2 bg-sky-500/5 px-3 py-1.5 rounded-full border border-sky-500/10">
+                                                        <span className="w-1 h-1 rounded-full bg-sky-400 animate-pulse" />
                                                         {item}
-                                                    </li>
+                                                    </div>
                                                 ))}
-                                            </ul>
+                                            </div>
                                         </div>
                                     )}
 
-                                    <div className="flex flex-wrap gap-2 mt-auto">
+                                    <div className="flex flex-wrap gap-2 mt-auto pt-4">
                                         {project.tags.map((tag, i) => (
                                             <span
                                                 key={i}
-                                                className="px-2.5 py-1 text-xs font-medium text-slate-300 bg-slate-800/50 rounded-md border border-slate-700/50"
+                                                className="px-3 py-1 text-[11px] font-bold text-slate-400 bg-slate-800/50 rounded-lg border border-slate-700/50 group-hover:border-sky-500/20 group-hover:text-slate-300 transition-colors"
                                             >
                                                 {tag}
                                             </span>
@@ -125,7 +123,7 @@ export default function Projects() {
                                 </div>
                             </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </motion.div>
             </div>
         </section>

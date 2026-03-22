@@ -23,12 +23,16 @@ body {
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400;
+  .text-accent {
+    @apply text-sky-400;
   }
 
   .glass-panel {
-    @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/50;
+    @apply bg-slate-900/40 backdrop-blur-xl border border-slate-800/50 shadow-2xl;
+  }
+
+  .glass-card {
+    @apply bg-slate-800/20 backdrop-blur-md border border-slate-700/30 hover:border-sky-500/30 transition-all duration-300;
   }
 
   .section-padding {
@@ -36,7 +40,7 @@ body {
   }
 
   .container-width {
-    @apply max-w-6xl mx-auto px-6;
+    @apply w-full max-w-6xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-[1440px] mx-auto px-6;
   }
 }
 

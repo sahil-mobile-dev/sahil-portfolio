@@ -1,0 +1,146 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is an approved member of a company
+    function isApprovedMember(companyId) {
+      return request.auth != null && 
+        exists(/databases/$(database)/documents/companyMembers/$(companyId + "_" + request.auth.uid)) &&
+        get(/databases/$(database)/documents/companyMembers/$(companyId + "_" + request.auth.uid)).data.status == 'approved';
+    }
+
+    // Helper function to check if user has admin/owner role in companyMembers
+    function isAdmin(companyId) {
+      return request.auth != null && 
+        exists(/databases/$(database)/documents/companyMembers/$(companyId + "_" + request.auth.uid)) &&
+        get(/databases/$(database)/documents/companyMembers/$(companyId + "_" + request.auth.uid)).data.role == 'owner';
+    }
+
+    // Fallback helper to check the ownerId in the companies document directly
+    function isCompanyOwner(companyId) {
+      return request.auth != null &&
+        get(/databases/$(database)/documents/companies/$(companyId)).data.ownerId == request.auth.uid;
+    }
+
+    // User profiles
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Companies
+    match /companies/{companyId} {
+      allow read: if request.auth != null && (
+        isCompanyOwner(companyId) || 
+        isApprovedMember(companyId)
+      );
+      allow create: if request.auth != null; 
+      allow update, delete: if request.auth != null && isCompanyOwner(companyId);
+    }
+
+    // Company Members
+    match /companyMembers/{memberId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == resource.data.userId || 
+        (request.auth.token.email != null && request.auth.token.email == resource.data.userEmail) ||
+        isAdmin(resource.data.companyId) ||
+        isCompanyOwner(resource.data.companyId)
+      );
+      allow create: if request.auth != null && (
+        request.resource.data.userId == request.auth.uid ||
+        isCompanyOwner(request.resource.data.companyId)
+      );
+      allow update: if request.auth != null && (
+        isAdmin(resource.data.companyId) || 
+        isCompanyOwner(resource.data.companyId) ||
+        (request.auth.uid == resource.data.userId && request.resource.data.status == resource.data.status)
+      );
+      allow delete: if request.auth != null && (
+        isAdmin(resource.data.companyId) || 
+        isCompanyOwner(resource.data.companyId)
+      );
+    }
+
+    // Leads & File History
+    match /leads/{leadId} {
+      allow read: if request.auth != null && (
+        (resource.data.companyId != null && (
+          isApprovedMember(resource.data.companyId) || 
+          isCompanyOwner(resource.data.companyId)
+        )) || 
+        (!('companyId' in resource.data) || resource.data.companyId == null)
+      );
+      allow create: if request.auth != null && isCompanyOwner(request.resource.data.companyId);
+      allow update: if request.auth != null && (
+        isCompanyOwner(resource.data.companyId) ||
+        (isApprovedMember(resource.data.companyId) && 
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+           'remarks', 'followUpNotes', 'status', 'updatedAt', 'email', 
+           'callStartTime', 'callEndTime', 'callDuration', 'lastCallerName', 
+           'lastCallerId', 'callBackTime', 'leadType'
+         ]))
+      );
+      allow delete: if request.auth != null && isCompanyOwner(resource.data.companyId);
+    }
+
+    match /fileHistory/{historyId} {
+      allow read: if request.auth != null && (
+        isApprovedMember(resource.data.companyId) ||
+        isCompanyOwner(resource.data.companyId)
+      );
+      allow create: if request.auth != null && isCompanyOwner(request.resource.data.companyId);
+      allow update, delete: if request.auth != null && isCompanyOwner(resource.data.companyId);
+    }
+
+    // --- PORTFOLIO ADMIN RULES ---
+    function isPortfolioAdmin() {
+      return request.auth != null && (
+        request.auth.token.email == "admin@sahil.mobiledev" || 
+        get(/databases/$(database)/documents/portfolio_users/$(request.auth.uid)).data.role == 'admin'
+      );
+    }
+
+    match /portfolio_users/{userId} {
+      allow read, create: if request.auth != null && request.auth.uid == userId;
+      allow update, delete: if isPortfolioAdmin();
+    }
+
+    match /portfolio_hero/{docId} {
+      allow read: if true;
+      allow write: if isPortfolioAdmin();
+    }
+    match /portfolio_about/{docId} {
+       allow read: if true;
+       allow write: if isPortfolioAdmin();
+    }
+    match /portfolio_skills/{docId} {
+       allow read: if true;
+       allow write: if isPortfolioAdmin();
+    }
+    match /portfolio_projects/{docId} {
+       allow read: if true;
+       allow write: if isPortfolioAdmin();
+    }
+    match /portfolio_experience/{docId} {
+       allow read: if true;
+       allow write: if isPortfolioAdmin();
+    }
+    match /portfolio_theme/{docId} {
+       allow read: if true;
+       allow write: if isPortfolioAdmin();
+    }
+    match /portfolio_contact_info/{docId} {
+       allow read: if true;
+       allow write: if isPortfolioAdmin();
+    }
+    // Contacts
+    match /contacts/{docId} {
+      // Admin can read all contacts
+      allow read: if isPortfolioAdmin();
+      // Anyone can submit a contact form
+      allow create: if true;
+      // Admin can update or delete
+      allow update, delete: if isPortfolioAdmin();
+    }
+  }
+}

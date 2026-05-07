@@ -1,104 +1,116 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Smartphone, Layout, Server, Bot } from "lucide-react";
+import { Smartphone, Globe, Layout, Palette, Share2, Bot, Box, ArrowUpRight } from "lucide-react";
 
 const services = [
     {
-        title: "App Development",
-        description: "Native and cross-platform mobile applications built with Flutter for iOS and Android.",
-        icon: <Smartphone className="w-6 h-6" />,
-        color: "sky"
+        title: "Mobile App Development",
+        description: "Flutter, Android/iOS apps, and Firebase integration.",
+        icon: <Smartphone className="w-8 h-8" />,
+        className: "md:col-span-8 md:row-span-2",
+        color: "from-sky-500 to-blue-600"
+    },
+    {
+        title: "Web Development",
+        description: "Business websites and landing pages.",
+        icon: <Globe className="w-8 h-8" />,
+        className: "md:col-span-4 md:row-span-2",
+        color: "from-violet-500 to-purple-600"
     },
     {
         title: "UI/UX Design",
-        description: "Modern, intuitive, and user-centric designs that provide exceptional digital experiences.",
-        icon: <Layout className="w-6 h-6" />,
-        color: "indigo"
+        description: "Modern UI systems and wireframes.",
+        icon: <Palette className="w-8 h-8" />,
+        className: "md:col-span-4 md:row-span-2",
+        color: "from-cyan-500 to-sky-600"
     },
     {
-        title: "Backend Development",
-        description: "Scalable server-side solutions using Firebase, Node.js, and cloud infrastructure.",
-        icon: <Server className="w-6 h-6" />,
-        color: "sky"
+        title: "AI Integration",
+        description: "AI chatbots and automation tools.",
+        icon: <Bot className="w-8 h-8" />,
+        className: "md:col-span-4 md:row-span-2",
+        color: "from-fuchsia-500 to-pink-600"
     },
     {
-        title: "AI Integrations",
-        description: "Integrating artificial intelligence and machine learning capabilities into applications.",
-        icon: <Bot className="w-6 h-6" />,
-        color: "indigo"
+        title: "Brand Identity",
+        description: "Logo design and brand guidelines.",
+        icon: <Box className="w-8 h-8" />,
+        className: "md:col-span-4 md:row-span-2",
+        color: "from-orange-500 to-red-600"
+    },
+    {
+        title: "Social Media Management",
+        description: "Instagram branding and creative strategy.",
+        icon: <Share2 className="w-8 h-8" />,
+        className: "md:col-span-6 md:row-span-2",
+        color: "from-emerald-500 to-teal-600"
+    },
+    {
+        title: "Web App Development",
+        description: "SaaS products and custom platforms.",
+        icon: <Layout className="w-8 h-8" />,
+        className: "md:col-span-6 md:row-span-2",
+        color: "from-blue-500 to-indigo-600"
     },
 ];
 
 export default function Services() {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const cardVariants = {
-        hidden: { opacity: 0, scale: 0.9, y: 20 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            transition: { duration: 0.5, ease: "easeOut" }
-        }
-    };
-
     return (
-        <section id="services" className="section-padding relative overflow-hidden bg-slate-900/60">
+        <section id="services" className="section-padding bg-black/30">
             <div className="container-width">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-center text-white">
-                        My <span className="text-accent">Services</span>
-                    </h2>
-                    <p className="text-slate-400 max-w-2xl mx-auto text-center mb-16 text-lg">
-                        Specialized solutions tailored to your business needs, delivering premium digital experiences.
-                    </p>
-
-                    <motion.div 
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
+                <div className="flex flex-col items-center text-center mb-20">
+                    <motion.span
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                        className="text-sky-400 font-bold uppercase tracking-[0.3em] text-xs mb-4"
                     >
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                variants={cardVariants}
-                                whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                                className="glass-panel p-10 rounded-[2.5rem] hover:border-sky-500/30 transition-all duration-500 group relative overflow-hidden shadow-2xl shadow-sky-500/5"
-                            >
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full -mr-16 -mt-16 blur-3xl group-hover:bg-sky-500/10 transition-colors" />
-                                
-                                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 border border-slate-700/50 bg-slate-800/80 group-hover:bg-sky-500/10 group-hover:border-sky-500/30 group-hover:scale-110 shadow-lg ${service.color === 'sky' ? 'text-sky-400' : 'text-indigo-400'}`}>
-                                    {service.icon}
+                        Our Expertise
+                    </motion.span>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-black text-white tracking-tight"
+                    >
+                        Complete Digital <span className="text-gradient">Solutions</span>
+                    </motion.h2>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[100px]">
+                    {services.map((service, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className={`${service.className} group relative overflow-hidden rounded-[2.5rem] bg-white/5 border border-white/10 p-8 hover:border-white/20 transition-all duration-500`}
+                        >
+                            <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl`} />
+                            
+                            <div className="flex flex-col h-full justify-between relative z-10">
+                                <div className="flex justify-between items-start">
+                                    <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-white border border-white/10 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                                        {service.icon}
+                                    </div>
+                                    <ArrowUpRight className="text-white/20 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
                                 </div>
                                 
-                                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-sky-400 transition-colors duration-300">
-                                    {service.title}
-                                </h3>
-                                <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
-                                    {service.description}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                </motion.div>
+                                <div>
+                                    <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
+                                    <p className="text-slate-400 text-sm max-w-[200px] leading-relaxed group-hover:text-slate-300 transition-colors">
+                                        {service.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );
 }
+

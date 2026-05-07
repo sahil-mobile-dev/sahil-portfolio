@@ -1,110 +1,94 @@
 "use client";
 
-import { User, Code, Smartphone, Zap, GraduationCap } from "lucide-react";
-import { useFirestoreDoc } from "@/lib/hooks/useFirestoreDoc";
 import { motion } from "framer-motion";
-import Image from "next/image";
-
-const iconMap = { User, Code, Smartphone, Zap, GraduationCap };
+import { Target, Users, Award, ShieldCheck } from "lucide-react";
 
 export default function About() {
-    const { data: aboutData, loading } = useFirestoreDoc("portfolio_about");
-
-    if (loading || !aboutData) {
-        return <section id="about" className="section-padding"><div className="container-width animate-pulse h-96 bg-slate-800/30 rounded-3xl"></div></section>;
-    }
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: { duration: 0.6, ease: "easeOut" }
-        }
-    };
-
     return (
-        <section id="about" className="section-padding relative overflow-hidden bg-slate-900/50">
-            {/* Background Decorative Element */}
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-sky-500/5 blur-[120px] -z-10"></div>
+        <section id="about" className="section-padding bg-black/50">
+            <div className="container-width">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    {/* Content */}
+                    <div className="flex flex-col gap-8">
+                        <div>
+                            <motion.span
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                className="text-sky-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 block"
+                            >
+                                Behind the Studio
+                            </motion.span>
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="text-4xl md:text-6xl font-black text-white tracking-tight"
+                            >
+                                Designing the <span className="text-gradient">Future</span>
+                            </motion.h2>
+                        </div>
+                        
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="text-lg text-slate-400 leading-relaxed"
+                        >
+                            We are a boutique digital product studio passionate about building experiences that help businesses grow. 
+                            From high-performance mobile apps and responsive websites to cohesive branding and AI-powered automation, 
+                            we provide end-to-end digital solutions tailored for the modern startup ecosystem.
+                        </motion.p>
 
-            <div className="container-width relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                    
-                    {/* Left Illustration */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <AboutFeature 
+                                icon={<Target className="text-sky-400" />}
+                                title="Our Mission"
+                                description="To empower brands with technology that is both functional and beautiful."
+                            />
+                            <AboutFeature 
+                                icon={<Users className="text-violet-400" />}
+                                title="The Team"
+                                description="A collective of creative designers and expert developers."
+                            />
+                        </div>
+                    </div>
+
+                    {/* Stats/Experience Illustration */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="relative order-2 lg:order-1"
+                        className="relative"
                     >
-                        <div className="relative z-10 w-full max-w-[450px] mx-auto">
-                            <Image 
-                                src="/education.png" 
-                                alt="Education and Growth Illustration" 
-                                width={500} 
-                                height={500}
-                                className="w-full h-full object-contain drop-shadow-2xl"
-                            />
-                        </div>
-                        {/* Decorative Rings */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-sky-500/10 rounded-full -z-10 animate-[spin_20s_linear_infinite]"></div>
-                    </motion.div>
-
-                    {/* Right Content */}
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        className="order-1 lg:order-2"
-                    >
-                        <motion.h2 
-                            variants={itemVariants}
-                            className="text-3xl md:text-5xl font-bold mb-8 text-left text-white"
-                        >
-                            About <span className="text-accent">Me</span>
-                        </motion.h2>
-
-                        <motion.div 
-                            variants={itemVariants}
-                            className="p-0 bg-transparent"
-                        >
-                            <p className="text-lg text-slate-300 leading-relaxed mb-10 whitespace-pre-line">
-                                {aboutData.description}
-                            </p>
-
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                {aboutData.features?.map((feature, i) => {
-                                    const IconComponent = iconMap[feature.icon] || Zap;
-                                    return (
-                                        <motion.div
-                                            key={i}
-                                            variants={itemVariants}
-                                            whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                                        >
-                                            <FeatureCard
-                                                icon={<IconComponent className="w-6 h-6 text-sky-400" />}
-                                                title={feature.title}
-                                                description={feature.description}
-                                            />
-                                        </motion.div>
-                                    );
-                                })}
+                        <div className="aspect-square bg-white/5 border border-white/5 rounded-[4rem] flex items-center justify-center relative overflow-hidden group">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-sky-500/10 to-violet-500/10 group-hover:opacity-20 transition-opacity" />
+                            <div className="text-center z-10">
+                                <span className="text-[120px] font-black text-white leading-none">05+</span>
+                                <span className="block text-sky-400 font-bold uppercase tracking-[0.5em] mt-2">Years of Excellence</span>
                             </div>
-                        </motion.div>
+                            
+                            {/* Floating Badges */}
+                            <motion.div 
+                                animate={{ y: [0, -10, 0] }}
+                                transition={{ duration: 3, repeat: Infinity }}
+                                className="absolute top-10 right-10 bg-slate-900 border border-white/10 p-4 rounded-2xl flex items-center gap-3 shadow-2xl"
+                            >
+                                <Award className="text-yellow-400" />
+                                <span className="text-xs font-bold text-white uppercase">Award Winning</span>
+                            </motion.div>
+
+                            <motion.div 
+                                animate={{ y: [0, 10, 0] }}
+                                transition={{ duration: 4, repeat: Infinity }}
+                                className="absolute bottom-10 left-10 bg-slate-900 border border-white/10 p-4 rounded-2xl flex items-center gap-3 shadow-2xl"
+                            >
+                                <ShieldCheck className="text-emerald-400" />
+                                <span className="text-xs font-bold text-white uppercase">Trusted Partner</span>
+                            </motion.div>
+                        </div>
                     </motion.div>
                 </div>
             </div>
@@ -112,16 +96,17 @@ export default function About() {
     );
 }
 
-function FeatureCard({ icon, title, description }) {
+function AboutFeature({ icon, title, description }) {
     return (
-        <div className="group h-full flex flex-col items-start gap-4 p-6 rounded-2xl bg-slate-800/30 border border-slate-700/50 hover:bg-slate-800/50 hover:border-sky-500/30 transition-all duration-300">
-            <div className="p-3 bg-slate-900/50 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-inner">
+        <div className="flex flex-col gap-3 p-6 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-slate-950 flex items-center justify-center border border-white/10">
                 {icon}
             </div>
             <div>
-                <h3 className="font-bold text-slate-100 mb-2">{title}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{description}</p>
+                <h4 className="text-white font-bold mb-1">{title}</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">{description}</p>
             </div>
         </div>
     );
 }
+

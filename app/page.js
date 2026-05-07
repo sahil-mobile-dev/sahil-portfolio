@@ -1,26 +1,34 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
+import TrustSection from "@/components/TrustSection";
 import Services from "@/components/Services";
-import LinkedInPosts from "@/components/LinkedInPosts";
+import Projects from "@/components/Projects";
+import Process from "@/components/Process";
+import TechStack from "@/components/TechStack";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Testimonials from "@/components/Testimonials";
+import About from "@/components/About";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-slate-900 min-h-screen">
+    <main className="bg-slate-950 min-h-screen">
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
+      <TrustSection />
       <Services />
-      {/* <LinkedInPosts /> */}
+      <Projects />
+      <Process />
+      <TechStack />
+      <WhyChooseUs />
+      <Testimonials />
+      <About />
+      <FAQ />
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }
+

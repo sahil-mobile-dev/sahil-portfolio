@@ -1,44 +1,90 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Mail, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="py-20 border-t border-slate-800/50 bg-slate-950 relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-500/5 via-slate-950 to-slate-950 opacity-30 -z-10" />
-
-            <div className="container-width px-6">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-12">
-                    <div className="text-center md:text-left space-y-4">
-                        <Link href="/" className="group flex items-center justify-center md:justify-start gap-2 text-2xl font-black tracking-tighter text-white">
-                            <span className="bg-sky-500 text-slate-900 px-2 py-0.5 rounded-lg group-hover:rotate-6 transition-transform">S</span>
-                            <span>Sahil<span className="text-sky-400">.</span>dev</span>
+        <footer className="py-20 bg-black border-t border-white/5">
+            <div className="container-width">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-20">
+                    {/* Brand */}
+                    <div className="md:col-span-4 flex flex-col gap-6">
+                        <Link
+                            href="/"
+                            className="group flex items-center gap-3 text-xl font-bold tracking-tight text-white"
+                        >
+                            <div className="relative w-10 h-10 flex items-center justify-center">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-sky-500 to-violet-500 rounded-xl" />
+                                <span className="relative z-10 font-black text-slate-950">SC</span>
+                            </div>
+                            <div className="flex flex-col leading-none">
+                                <span className="text-lg uppercase tracking-wider">Sahil</span>
+                                <span className="text-[10px] text-sky-400 font-medium tracking-[0.2em] uppercase">Studio</span>
+                            </div>
                         </Link>
-                        <p className="text-slate-400 text-base max-w-xs leading-relaxed">
-                            Crafting high-performance mobile and web experiences with a focus on premium design.
+                        <p className="text-slate-500 leading-relaxed max-w-sm">
+                            We build modern digital products that help businesses scale. From mobile apps to AI-powered platforms.
                         </p>
+                        <div className="flex gap-4">
+                            <SocialIcon icon={<Linkedin size={18} />} href="https://linkedin.com/in/sahil-chudasama" />
+                            <SocialIcon icon={<Twitter size={18} />} href="#" />
+                            <SocialIcon icon={<Instagram size={18} />} href="#" />
+                            <SocialIcon icon={<Github size={18} />} href="https://github.com/sahil-mobile-dev" />
+                        </div>
                     </div>
 
-                    <div className="flex flex-col items-center md:items-end gap-6">
-                        <div className="flex items-center gap-4">
-                            <SocialLink href="https://github.com/sahil-mobile-dev" icon={<Github className="w-5 h-5" />} label="GitHub" />
-                            <SocialLink href="https://linkedin.com/in/sahil-chudasama" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" />
-                            <SocialLink href="mailto:sahil.mobiledev@gmail.com" icon={<Mail className="w-5 h-5" />} label="Email" />
+                    {/* Quick Links */}
+                    <div className="md:col-span-2">
+                        <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Navigation</h4>
+                        <ul className="flex flex-col gap-4">
+                            <FooterLink href="#services">Services</FooterLink>
+                            <FooterLink href="#projects">Work</FooterLink>
+                            <FooterLink href="#process">Process</FooterLink>
+                            <FooterLink href="#about">About</FooterLink>
+                            <FooterLink href="#faq">FAQ</FooterLink>
+                        </ul>
+                    </div>
+
+                    {/* Services */}
+                    <div className="md:col-span-3">
+                        <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Services</h4>
+                        <ul className="flex flex-col gap-4">
+                            <li className="text-sm text-slate-500">Mobile Development</li>
+                            <li className="text-sm text-slate-500">Web Development</li>
+                            <li className="text-sm text-slate-500">UI/UX Design</li>
+                            <li className="text-sm text-slate-500">AI Integration</li>
+                            <li className="text-sm text-slate-500">Brand Identity</li>
+                        </ul>
+                    </div>
+
+                    {/* Contact */}
+                    <div className="md:col-span-3">
+                        <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Contact</h4>
+                        <div className="flex flex-col gap-4">
+                            <p className="text-sm text-slate-500 leading-relaxed">
+                                Ahmedabad, Gujarat <br /> India
+                            </p>
+                            <a href="mailto:sahil.mobiledev@gmail.com" className="text-sm text-sky-400 font-bold hover:text-white transition-colors">
+                                sahil.mobiledev@gmail.com
+                            </a>
+                            <Link href="#contact" className="inline-flex items-center gap-2 text-sm text-white font-bold hover:text-sky-400 transition-colors group">
+                                Start a Project <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                            </Link>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-16 pt-10 border-t border-slate-900/50 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
-                    <p className="text-slate-500 font-medium">
-                        © {currentYear} <span className="text-slate-300">Sahil Chudasama</span>. All rights reserved.
+                <div className="pt-10 border-t border-white/5 flex flex-col md:row-reverse md:flex-row justify-between items-center gap-6">
+                    <p className="text-xs text-slate-600 font-medium">
+                        © {currentYear} Sahil Chudasama Digital Studio. All rights reserved.
                     </p>
-                    <div className="flex gap-8">
-                        <Link href="#" className="text-slate-500 hover:text-sky-400 transition-colors font-medium">Privacy Policy</Link>
-                        <Link href="#" className="text-slate-500 hover:text-sky-400 transition-colors font-medium">Terms of Service</Link>
+                    <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-600">
+                        <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+                        <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
                     </div>
                 </div>
             </div>
@@ -46,18 +92,21 @@ export default function Footer() {
     );
 }
 
-function SocialLink({ href, icon, label }) {
+function SocialIcon({ icon, href }) {
     return (
-        <motion.a
-            whileHover={{ y: -5, scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={label}
-            className="w-12 h-12 flex items-center justify-center rounded-2xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-sky-400 hover:border-sky-500/30 transition-all shadow-lg"
-        >
+        <a href={href} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-500 hover:text-white hover:border-white transition-all">
             {icon}
-        </motion.a>
+        </a>
     );
 }
+
+function FooterLink({ href, children }) {
+    return (
+        <li>
+            <Link href={href} className="text-sm text-slate-500 hover:text-white transition-colors">
+                {children}
+            </Link>
+        </li>
+    );
+}
+

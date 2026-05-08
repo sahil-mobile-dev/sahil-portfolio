@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Sahil Chudasama | Flutter Developer",
+  title: "Sahil Chudasama | Digital Studio",
   description: "Portfolio of Sahil Chudasama, a Flutter Developer specializing in cross-platform mobile apps, AI integrations, and scalable backends.",
   keywords: ["Flutter Developer", "Mobile App Developer", "Cross-Platform", "Sahil Chudasama", "Portfolio", "Android", "iOS", "Firebase"],
   authors: [{ name: "Sahil Chudasama", url: "https://sahil-mobile-dev.web.app" }],
@@ -20,7 +20,7 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://sahil-mobile-dev.web.app",
-    title: "Sahil Chudasama | Flutter Developer",
+    title: "Sahil Chudasama | Digital Studio",
     description: "Building cross-platform mobile experiences with Flutter and AI.",
     siteName: "Sahil Chudasama Portfolio",
     images: [
@@ -34,7 +34,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sahil Chudasama | Flutter Developer",
+    title: "Sahil Chudasama | Digital Studio",
     description: "Building cross-platform mobile experiences with Flutter and AI.",
     images: ["/og-image.png"], // TODO: Generate this image
   },
